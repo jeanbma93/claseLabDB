@@ -53,22 +53,9 @@ CREATE PROCEDURE ConsultarCalleColonia(
 )
 as
 begin
-
-	declare @cp int
-	SELECT vCalle, vColonia FROM Domicilio WHERE vMunicipio LIKE '%'+@municipio+'%' OR iCodigoPostal LIKE @cp;
+	SELECT vCalle, vColonia FROM Domicilio WHERE vMunicipio LIKE '%'+@municipio+'%';
 end;
 
-CREATE PROCEDURE ConsultarCalleColonia(
-@municipio varchar(100)
-)
-as
-begin
-
-	declare @cp int
-	SELECT vCalle, vColonia FROM Domicilio WHERE vMunicipio LIKE '%'+@municipio+'%' OR iCodigoPostal LIKE @cp;
-end;
-
-exec ConsultarCalleColonia apodaca;
 
 CREATE FUNCTION GenerarCuadrado(
 @ladoX int,
