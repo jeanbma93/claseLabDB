@@ -35,12 +35,12 @@ CREATE VIEW PersonasActuales AS
 
 SELECT * FROM PersonasActuales;
 
-CREATE VIEW Cumpleaños AS
+CREATE VIEW CumpleaÃ±os AS
 (
-	SELECT COUNT(iAno) as Cumpleaños FROM FechaDeNacimiento GROUP BY iMes
+	SELECT COUNT(iAno) as CumpleaÃ±os FROM FechaDeNacimiento GROUP BY iMes
 );
 
-SELECT * FROM Cumpleaños;
+SELECT * FROM CumpleaÃ±os;
 
 CREATE VIEW ADINERADOS AS
 (
@@ -51,6 +51,6 @@ SELECT * FROM ADINERADOS;
 
 DECLARE @query nvarchar (MAX)
 SET @query = 'CREATE TABLE AlmacenDeTemporada
-	( iIdProd int IDENTITY, vDescripcion varchar(100))'
+	( iIdProd int IDENTITY(1,1), vDescripcion varchar(100))'
 
 EXEC (@query)
